@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8sscheduler
+spec:
+  containers:
+    - name: k8sscheduler
+      image: k8sscheduler:local
+      command: [ "/bin/bash", "-c", "--" ]
+      args: [ "while true; do sleep 30; done;" ]
+      resources:
+        requests:
+          cpu: 1000m
+          memory: 1G
+        limits:
+          cpu: 4000m
+          memory: 1G
